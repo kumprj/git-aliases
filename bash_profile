@@ -1,3 +1,5 @@
+# alias docker='winpty docker' # Not needed in git bash 2.27 nor macbook air
+alias sshec2='ssh -i ~/Documents/Projects/aws/aws_docs/rob.pem ec2-user@ec2-18-220-180-148.us-east-2.compute.amazonaws.com'
 # Docker Aliases
 alias dockerrmvblank='docker rmi $(docker images | grep "^<none>" | awk "{print $3}") --force'
 
@@ -9,6 +11,13 @@ alias push='git push'
 alias pull='git pull'
 alias cm='git commit -m'
 alias status='git status'
+
+# JQ
+# Windows only for JQ
+alias jq='/c/Users/robbi/Documents/Projects/Tools/jq-win64.exe'
+# ECR Login
+alias ecrlogin='bash /c/Users/robbi/Documents/Projects/Tools/ecrlogin.sh'
+alias awsaccountid='aws sts get-caller-identity | jq .Account' # having issues with tr -d and sed escaping in a git alias
 
 function gitcob(){
    git checkout -b $1 && git push -u origin $1
