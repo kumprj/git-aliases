@@ -20,7 +20,7 @@ alias ecrlogin='bash /c/Users/robbi/Documents/Projects/Tools/ecrlogin.sh'
 alias awsaccountid='aws sts get-caller-identity | jq .Account' # having issues with tr -d and sed escaping in a git alias
 
 function gitcob(){
-   git checkout -b $1 && git push -u origin $1
+   git pull && git checkout -b $1 && git push -u origin $1
 }
 function refresh () {
 	source  ~/.bash_profile
