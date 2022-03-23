@@ -17,7 +17,7 @@ alias status='git status'
 alias jq='/c/Users/robbi/Documents/Projects/Tools/jq-win64.exe'
 # ECR Login
 alias ecrlogin='bash /c/Users/robbi/Documents/Projects/Tools/ecrlogin.sh'
-alias awsaccountid='aws sts get-caller-identity | jq .Account' # having issues with tr -d and sed escaping in a git alias
+alias awsaccountid='aws sts get-caller-identity | jq .Account' 
 
 function gitcob(){
    git pull && git checkout -b $1 && git push -u origin $1
